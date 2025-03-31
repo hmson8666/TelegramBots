@@ -1,0 +1,11 @@
+public static void main(String[] args) {
+	SpringApplication.run(TelegramApplication.class, args);
+
+	try {
+		TelegramBotsApi api = new  TelegramBotsApi(DefaultBotSession.class);
+		api.registerBot(new TestHandlers());
+	} catch (TelegramApiException e) {
+		e.printStackTrace();
+	}
+
+}
